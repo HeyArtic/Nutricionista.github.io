@@ -1,20 +1,3 @@
-<?php
-
-    session_start();
-    require_once 'comentarios.php';
-    $c = new Comentario("login","localhost","alisson","64315208");
-    $coments = $c->buscarComentarios();
-    
-
-?>
-
-<?php
-
-if(!isset($_SESSION)) {
-    session_start();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,52 +18,7 @@ if(!isset($_SESSION)) {
 <body>
     <header>
         <nav id="navbar">
-            <i class="fa-solid fa-sun" id="nav_logo">Kelvia Rocha</i>
-                <?php
-            if (isset($_SESSION['id_master']))
-            { ?>
-            <ul id="nav_list">
-                <li class="nav-item active">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Depoimentos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="addarquivos.php">Enviar arquivos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="assets/login/signup.php">Registrar paciente</a>
-                </li>
-                </ul>
-                <button class="btn-default" ><a href="assets/login/logout.php">Sair</a></button>
-            <?php
-        }else
-        { ?>
-                      <?php
-                    if (isset($_SESSION['id_usuario']))
-                    { ?>
-                    <ul id="nav_list">
-                <li class="nav-item active">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Depoimentos</a>
-                </li>
-                     <li class="nav-item">
-                    <a href="dieta.php">Dieta</a>
-                </li>
-                </ul>
-                <button class="btn-default" ><a href="assets/login/logout.php">Sair</a></button>
-                <?php
-        }else
-        { ?>
+            <i class="fa-solid fa-sun" id="nav_logo">Nome</i>
         <ul id="nav_list">
                 <li class="nav-item active">
                     <a href="#home">Início</a>
@@ -92,65 +30,12 @@ if(!isset($_SESSION)) {
                     <a href="#testimonials">Depoimentos</a>
                 </ul>
                 <button class="btn-default" ><a href="assets/login/login-ix.php">Entrar</a></button>
-            <?php
-        }
-        
-        
-    }
-        ?>
+
             <button id="mobile_btn">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
-
-       <div id="mobile_menu">
-        <?php
-            if (isset($_SESSION['id_master']))
-            { ?>
-               <ul id="mobile_nav_list">
-                
-                <li class="nav-item active">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Depoimentos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="addarquivos.php">Enviar arquivos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="assets/login/signup.php">Registrar paciente</a>
-                </li>
-                </ul>
-                <button class="btn-default" ><a href="assets/login/logout.php">Sair</a></button>
-            <?php
-        }else
-        { ?>
-         <?php
-                    if (isset($_SESSION['id_usuario']))
-                    { ?>
-           <ul id="mobile_nav_list">
-                
-                <li class="nav-item active">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Depoimentos</a>
-                </li>
-                     <li class="nav-item">
-                    <a href="dieta.php">Dieta</a>
-                </li>
-                </ul>
-                <button class="btn-default" ><a href="assets/login/logout.php">Sair</a></button>
-                <?php
-        }else
-        { ?>
+    
         <ul id="mobile_nav_list">
                 
                 <li class="nav-item active">
@@ -160,16 +45,12 @@ if(!isset($_SESSION)) {
                         <a href="#menu">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#testimonials">Depoimentos</a>
+           <a href="#testimonials">Depoimentos</a>
                     </li>
                 </ul>
     
                 <button class="btn-default" ><a href="assets/login/logout.php">Entrar</a></button>
                     </ul>
-                          <?php
-        }
-    }
-        ?>
                     
         </div>
     </header>
