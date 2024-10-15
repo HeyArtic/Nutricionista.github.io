@@ -182,13 +182,6 @@
 
 
         <section id="testimonials">
-        <form class="com" method="POST">
-            <textarea name="texto" placeholder="Deixe seu comentário"></textarea>
-            <input type="submit" value="Compartilhar">
-            </div>
-<?php  }
-        ?>
-
             <div id="testimonials_content">
                 <h2 class="section-title">
                     Depoimentos
@@ -196,33 +189,12 @@
                 <h3 class="section-subtitle">
                     Quem conhece indica!
                 </h3>
-                <?php
-       if(count($coments) > 0)
-          {
-            foreach ($coments as $v)
-            { ?>
-            
                 <div id="feedbacks">
                     <div class="feedback">
                         <img src="assets/img/perfil.png" class="feedback-avatar" alt="">
 
                         <div class="feedback-content">
-                            <p><?php echo $v['nome_pessoa']; ?>
-                                <h4>
-                            <?php
-                    if (isset($_SESSION['id_usuario']))
-                    {
-                        if($_SESSION['id_usuario'] == $v['fk_id_usuario'])
-                        { ?>
-                        <a href="index.php?id_exc=<?php echo $v['id'];?>">Excluir</a>                   
-             <?php      }
-                    }elseif (isset($_SESSION['id_master']))
-                        {  ?>
-                         <a href="index.php?id_exc=<?php echo $v['id'];?>">Excluir</a>
-             <?php         } ?> 
-                        
-                     
-                        </h4>
+                            <p>HeyArtic</p>
                                 <p>
                                 <span>
                                     
@@ -233,7 +205,7 @@
                                     <i class="fa-solid fa-star"></i>
                                 </span>
                             </p>
-                            <p><?php echo $v['comentarios']; ?>
+                            <p>Melhor Nutricionista!
                             </p>
                         </div>
                     </div>
