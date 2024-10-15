@@ -267,36 +267,4 @@
 </body>
         
 </html>
-<?php
-if (isset($_GET['id_exc']))
-{
-    $id_e = addslashes($_GET['id_exc']);
-    if(isset($_SESSION['id_master']))
-    {
-      
-        $c->excluirComentario($id_e,$_SESSION['id_master']);
-    }elseif (isset($_SESSION['id_usuario']))
-{
-    $c->excluirComentario($id_e,$_SESSION['id_usuario']);
-
-}
- echo "<script> window.location.href='index.php';</script>";
-}
-
-?>
-<?php
-
-if(isset($_POST['texto']))
-{
-    $texto = addslashes($_POST['texto']);
-    if (isset($_SESSION['id_master']))
-    {
-        $c->inserirComentario($_SESSION['id_master'], $texto);
-    }elseif (isset($_SESSION['id_usuario']))
-    {
-    $c->inserirComentario($_SESSION['id_usuario'], $texto);
-}
-echo "<script> window.location.href='index.php';</script>";
-}
-?>
                 
