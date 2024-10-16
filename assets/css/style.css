@@ -491,6 +491,9 @@ footer {
     #menu {
         margin-bottom: 0px;
     }
+      .mobile-menu {
+        display: none;
+    }
 
 }
 
